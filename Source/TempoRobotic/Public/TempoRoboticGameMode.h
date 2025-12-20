@@ -6,10 +6,10 @@
 
 #include "TempoGameMode.h"
 
-#include "TempoSampleGameMode.generated.h"
+#include "TempoRoboticGameMode.generated.h"
 
 UCLASS()
-class TEMPOSAMPLE_API ATempoSampleGameMode : public ATempoGameMode
+class TEMPOROBOTIC_API ATempoRoboticGameMode : public ATempoGameMode
 {
 	GENERATED_BODY()
 };

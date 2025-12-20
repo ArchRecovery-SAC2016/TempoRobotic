@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class TempoSample : TempoModuleRules
+public class TempoRobotic : TempoModuleRules
 {
-	public TempoSample(ReadOnlyTargetRules Target) : base(Target)
+	public TempoRobotic(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	

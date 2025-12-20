@@ -5,7 +5,7 @@
 	"Description": "",
 	"Modules": [
 		{
-			"Name": "TempoSample",
+			"Name": "TempoRobotic",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

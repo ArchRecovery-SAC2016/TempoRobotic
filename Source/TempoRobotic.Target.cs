@@ -3,14 +3,14 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class TempoSampleEditorTarget : TargetRules
+public class TempoRoboticTarget : TargetRules
 {
-	public TempoSampleEditorTarget( TargetInfo Target) : base(Target)
+	public TempoRoboticTarget(TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Editor;
+		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V5;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
-		ExtraModuleNames.Add("TempoSample");
+		ExtraModuleNames.Add("TempoRobotic");
 
 		if (Platform == UnrealTargetPlatform.Win64)
 		{
