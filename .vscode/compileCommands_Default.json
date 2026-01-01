@@ -4960,7 +4960,15 @@
 		"directory": "U:\\UnrealEngine\\UE_5.5\\Engine\\Source"
 	},
 	{
-		"file": "U:\\UnrealEngine\\TempoRobotic\\Source\\TempoRobotic\\Private\\MyActor.cpp",
+		"file": "U:\\UnrealEngine\\TempoRobotic\\Source\\TempoRobotic\\Private\\Actors\\RobotBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@U:\\UnrealEngine\\TempoRobotic\\.vscode\\compileCommands_Default\\TempoRobotic.1.rsp"
+		],
+		"directory": "U:\\UnrealEngine\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "U:\\UnrealEngine\\TempoRobotic\\Source\\TempoRobotic\\Private\\Actors\\vc140.pdb",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
 			"@U:\\UnrealEngine\\TempoRobotic\\.vscode\\compileCommands_Default\\TempoRobotic.1.rsp"
@@ -4984,7 +4992,7 @@
 		"directory": "U:\\UnrealEngine\\UE_5.5\\Engine\\Source"
 	},
 	{
-		"file": "U:\\UnrealEngine\\TempoRobotic\\Source\\TempoRobotic\\Public\\MyActor.h",
+		"file": "U:\\UnrealEngine\\TempoRobotic\\Source\\TempoRobotic\\Public\\Actors\\RobotBase.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
 			"@U:\\UnrealEngine\\TempoRobotic\\.vscode\\compileCommands_Default\\TempoRobotic.1.rsp"
