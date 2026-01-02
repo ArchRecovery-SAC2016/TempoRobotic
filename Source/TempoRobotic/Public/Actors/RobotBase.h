@@ -15,12 +15,6 @@ public:
 	// Sets default values for this actor's properties
 	ARobotBase ();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Robot Configuration")
-	FRobotConfig RobotConfig;
-
-	UFUNCTION(BlueprintCallable, Category="Robot Tasks")
-	void ExecuteTask(const FTaskEntry& Task);
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

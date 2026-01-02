@@ -3,7 +3,7 @@ from enum import IntEnum
 # Tasks disponíveis para o robô. A unreal precisa imprementar essas tasks
 class TaskType(IntEnum):
     Idle = 0
-    SayHello = 1
+    PrintToScreen = 1
     MoveToLocation = 2
     MoveAlongPath = 3
     MoveToActor = 4

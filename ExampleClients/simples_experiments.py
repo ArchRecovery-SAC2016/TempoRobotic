@@ -54,6 +54,12 @@ async def main():
     print("\n[Tarefa 1] Configurando: PrintToScreen Message...")
     await cmd_print_to_screen(robot_id, "THIS MESSAGE WILL APPEAR ON THE SCREEN FOR 10 SECONDS!!!", duration=10.0)
 
+      # Espera o feedback da Unreal
+    sucesso = await wait_for_task_finished(robot_id, timeout=10)
+    if not sucesso:
+        print("A tarefa 1 falhou")
+
+
     print("\nFim do script.")
 
 if __name__ == "__main__":
