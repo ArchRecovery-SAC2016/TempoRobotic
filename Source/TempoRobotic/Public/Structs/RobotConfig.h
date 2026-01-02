@@ -1,7 +1,6 @@
 ﻿#pragma once
 
 #include "CoreMinimal.h"
-#include "RobotTaskStruct.h" // Sua struct anterior
 #include "RobotConfig.generated.h"
 
 // Configuração de Custo de Tarefa
@@ -9,8 +8,8 @@ USTRUCT(BlueprintType)
 struct FTaskCostConfig {
     GENERATED_BODY()
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    ETaskType TaskType = ETaskType::Idle;
+    // UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    // ETaskType TaskType = ETaskType::Idle;
 
     // Custo energético apenas para manter a tarefa ativa
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -53,8 +52,10 @@ struct FRobotState {
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     FRotator CurrentRotation = FRotator::ZeroRotator;
 
+    /*
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     ETaskType CurrentTask = ETaskType::Idle;
+    */
     
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     bool bIsStuck = false; 

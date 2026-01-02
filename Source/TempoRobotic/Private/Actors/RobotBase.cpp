@@ -2,7 +2,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 
 ARobotBase ::ARobotBase () {
-	PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 
     // Garante que o robô tenha um AI Controller assim que nascer, 
     // seja arrastado no editor ou spawnado via código.

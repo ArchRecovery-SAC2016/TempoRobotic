@@ -50,7 +50,8 @@ async def main():
    
     await wait_for_robot(robot_id)
 
-    # --- TASK 1: SAY HELLO ---
+    """
+    # --- TASK 1: SAY HELLO 
     print("\n[Tarefa 1] Configurando: PrintToScreen Message...")
     await cmd_print_to_screen(robot_id, "THIS MESSAGE WILL APPEAR ON THE SCREEN FOR 10 SECONDS!!!", duration=10.0)
 
@@ -58,10 +59,11 @@ async def main():
     sucesso = await wait_for_task_finished(robot_id, timeout=10)
     if not sucesso:
         print("A tarefa 1 falhou")
-
-        # --- TASK 2: Moving to point 0, 1500, 0
-    print("\n[Tarefa 2] Configurando: MoveToLocation, vai andar 5 metros no eixo Y...")
-    await cmd_move_to_location(robot_id, 0, 5000, 0)
+    """
+    
+    # --- TASK 2: Moving to point 0, 1500, 0
+    print("\n[Tarefa 2] Configurando: MoveToLocation, vai andar 5 metros no eixo Y com aceitação de 10 unidades...")
+    await cmd_move_to_location(robot_id, 1500, 500, 50.0)
     sucesso = await wait_for_task_finished(robot_id, timeout=50)
     if not sucesso:
         print("A tarefa 2 falhou")
