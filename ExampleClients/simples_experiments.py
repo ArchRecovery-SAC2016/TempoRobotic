@@ -51,11 +51,8 @@ async def main():
     await wait_for_robot(robot_id)
 
     # --- TASK 1: SAY HELLO ---
-    print("\n[Tarefa 1] Configurando: Say Hello...")
-    await cmd_print_to_screen(robot_id, "Ola Todos! A API funciona.", duration=4.0)
-    
-    print("\n[Tarefa 2]")
-    await cmd_print_to_screen(robot_id, "Essa mensagem ira aparecer depois da primeira. Por 10 segundos.", duration=10.0)
+    print("\n[Tarefa 1] Configurando: PrintToScreen Message...")
+    await cmd_print_to_screen(robot_id, "THIS MESSAGE WILL APPEAR ON THE SCREEN FOR 10 SECONDS!!!", duration=10.0)
 
     print("\nFim do script.")
 

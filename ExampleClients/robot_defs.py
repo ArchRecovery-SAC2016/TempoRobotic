@@ -19,8 +19,8 @@ class RobotKeys:
     TYPE = f"{ROOT}.Type"
     
     # Sub-structs. Pq precisamos passar as propriedades aninhadas
-    SAY_HELLO_MSG       = f"{ROOT}.SayHello.Message"
-    SAY_HELLO_DURATION  = f"{ROOT}.SayHello.Duration"
+    PRINT_TO_SCREEN_MSG       = f"{ROOT}.PrintToScreen.Message"
+    PRINT_TO_SCREEN_DURATION  = f"{ROOT}.PrintToScreen.Duration"
     
     MOVE_LOC_VEC    = f"{ROOT}.MoveToLocation.Location"
     

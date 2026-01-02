@@ -3,8 +3,8 @@ from robot_defs import TaskType, RobotKeys
 
 async def cmd_print_to_screen(robot_id, message, duration=5.0):
 
-    await tw.set_string_property(robot_id, "", RobotKeys.SAY_HELLO_MSG, message)
-    await tw.set_float_property(robot_id, "", RobotKeys.SAY_HELLO_DURATION, duration)
+    await tw.set_string_property(robot_id, "", RobotKeys.PRINT_TO_SCREEN_MSG, message)
+    await tw.set_float_property(robot_id, "", RobotKeys.PRINT_TO_SCREEN_DURATION, duration)
 
     await tw.set_int_property(robot_id, "", RobotKeys.TYPE, int(TaskType.SayHello))
     await tw.call_function(robot_id, "", "ExecuteNewTask")
