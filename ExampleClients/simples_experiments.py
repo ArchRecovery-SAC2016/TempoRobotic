@@ -59,6 +59,13 @@ async def main():
     if not sucesso:
         print("A tarefa 1 falhou")
 
+        # --- TASK 2: Moving to point 0, 1500, 0
+    print("\n[Tarefa 2] Configurando: MoveToLocation, vai andar 5 metros no eixo Y...")
+    await cmd_move_to_location(robot_id, 0, 5000, 0)
+    sucesso = await wait_for_task_finished(robot_id, timeout=50)
+    if not sucesso:
+        print("A tarefa 2 falhou")
+
 
     print("\nFim do script.")
 

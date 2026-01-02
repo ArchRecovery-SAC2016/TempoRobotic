@@ -23,6 +23,7 @@ class RobotKeys:
     PRINT_TO_SCREEN_DURATION  = f"{ROOT}.PrintToScreen.Duration"
     
     MOVE_LOC_VEC    = f"{ROOT}.MoveToLocation.Location"
+    MOVE_LOC_ACCEPTANCE_RADIUS  = f"{ROOT}.MoveToLocation.AcceptanceRadius"
     
     MOVE_PATH_NAME  = f"{ROOT}.MoveAlongPath.PathName"
     MOVE_PATH_START = f"{ROOT}.MoveAlongPath.PathStartIndex"
