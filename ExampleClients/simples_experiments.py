@@ -71,8 +71,8 @@ async def main():
     """
 
     # --- TASK 3: Moving to Actor
-    print("\n[Tarefa 2] Configurando: MoveToActor, vai procurar o Actor RoomAEntrance e se mover pra la...")
-    await cmd_move_to_actor(robot_id, "BP_RoomAEntrance")
+    print("\n[Tarefa 2] Configurando: MoveToActor, vai procurar o Actor com o Identificador RoomAEntrance e se mover pra la...")
+    await cmd_move_to_actor(robot_id, "RoomA_Entrance")
     sucesso = await wait_for_task_finished(robot_id, timeout=50)
     if not sucesso:
         print("A tarefa 2 falhou")
