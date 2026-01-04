@@ -27,9 +27,9 @@ class RobotKeys:
     MOVE_LOC_Y    = f"{ROOT}.MoveToLocation.MoveLocationY"
     MOVE_LOC_ACCEPTANCE_RADIUS  = f"{ROOT}.MoveToLocation.AcceptanceRadius"
     
-    MOVE_PATH_NAME  = f"{ROOT}.MoveAlongPath.PathName"
-    MOVE_PATH_START = f"{ROOT}.MoveAlongPath.PathStartIndex"
-    MOVE_PATH_END   = f"{ROOT}.MoveAlongPath.PathEndIndex"
+    MOVE_PATH_NAME  = f"{ROOT}.MoveAlongPath.ActorName"
+    MOVE_PATH_START_INDEX = f"{ROOT}.MoveAlongPath.PathStartIndex"
+    MOVE_PATH_END_INDEX   = f"{ROOT}.MoveAlongPath.PathEndIndex"
     
     MOVE_ACTOR_NAME = f"{ROOT}.MoveToActor.ActorName"
     

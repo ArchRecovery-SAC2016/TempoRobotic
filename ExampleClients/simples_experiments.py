@@ -4,7 +4,7 @@ import tempo.tempo_world as tw
 import tempo.tempo_core_editor as tce
 
 # Importamos nosso novo arquivo de definições
-from robot_api import cmd_print_to_screen, cmd_move_to_location, cmd_move_to_actor
+from robot_api import cmd_print_to_screen, cmd_move_to_location, cmd_move_to_actor, cmd_move_along_path
 
 async def wait_for_robot(actor_name):
     print(f"Aguardando {actor_name} ficar disponível...")
@@ -69,13 +69,22 @@ async def main():
     if not sucesso:
         print("A tarefa 2 falhou")
     """
-
+    """
     # --- TASK 3: Moving to Actor
-    print("\n[Tarefa 2] Configurando: MoveToActor, vai procurar o Actor com o Identificador RoomAEntrance e se mover pra la...")
+    print("\n[Tarefa 3] Configurando: MoveToActor, vai procurar o Actor com o Identificador RoomAEntrance e se mover pra la...")
     await cmd_move_to_actor(robot_id, "RoomA_Entrance")
     sucesso = await wait_for_task_finished(robot_id, timeout=50)
     if not sucesso:
-        print("A tarefa 2 falhou")
+        print("A tarefa 3 falhou")
+    """
+
+    print("\n[Tarefa 4] Configurando: MoveAlongPath, vai procurar o Actor com o Identificador Path_A e se mover do ponto 0 até o final (-1)...")
+    await cmd_move_along_path(robot_id, "Path_A", 0, -1)
+    sucesso = await wait_for_task_finished(robot_id, timeout=50)
+    if not sucesso:
+        print("A tarefa 4 falhou")
+
+        
 
     print("\nFim do script.")
 

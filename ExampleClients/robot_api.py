@@ -46,3 +46,14 @@ async def cmd_move_to_actor(robot_id, target_actor_name):
     await tw.set_int_property(robot_id, "", RobotKeys.TYPE, int(TaskType.MoveToActor))
     
     await tw.call_function(robot_id, "", "ExecuteNewTask")
+
+async def cmd_move_along_path(robot_id, path_actor_name, start_index=0, end_index=-1):
+    """
+    Manda o robô seguir outro ator.
+    """
+    await tw.set_string_property(robot_id, "", RobotKeys.MOVE_PATH_NAME, path_actor_name)
+    await tw.set_int_property(robot_id, "", RobotKeys.MOVE_PATH_START_INDEX, start_index)
+    await tw.set_int_property(robot_id, "", RobotKeys.MOVE_PATH_END_INDEX, end_index)
+    await tw.set_int_property(robot_id, "", RobotKeys.TYPE, int(TaskType.MoveAlongPath))
+    
+    await tw.call_function(robot_id, "", "ExecuteNewTask")
