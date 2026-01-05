@@ -1,45 +1,10 @@
 import asyncio
-import time 
 import tempo.tempo_world as tw
 import tempo.tempo_core_editor as tce
 
-# Importamos nosso novo arquivo de definições
-from robot_api import cmd_print_to_screen, cmd_move_to_location, cmd_move_to_actor, cmd_move_along_path
+# Importamos metodos utilitários do robot_api.py
+from robot_api import cmd_print_to_screen, cmd_move_to_location, cmd_move_to_actor, cmd_move_along_path, wait_for_robot, wait_for_task_finished
 
-async def wait_for_robot(actor_name):
-    print(f"Aguardando {actor_name} ficar disponível...")
-    while True:
-        try:
-            state = await tw.get_current_actor_state(actor_name=actor_name)
-            if state:
-                print(f" Robot: {actor_name} detectado!")
-                return True
-        except Exception:
-            pass
-        await asyncio.sleep(0.5)
-
-async def wait_for_task_finished(robot_id, timeout=None):
-    print(f"--- Aguardando tarefa no {robot_id} ---")
-    start_time = time.time()
-
-    while True:
-        if timeout is not None and (time.time() - start_time) > timeout:
-            print(f"!!! Timeout de {timeout}s atingido !!!")
-            return False
-
-        try:
-            # Assume que "TaskState" é uma variável separada no seu Actor (não dentro da struct de input)
-            response = await tw.get_actor_properties(actor=robot_id, include_components=False)
-            for prop in response.properties:
-                if prop.name == "TaskState":
-                    val = str(prop.value)
-                    if val == "Finished":
-                        print("Tarefa finalizada!")
-                        return True
-        except Exception as e:
-            print(f"Erro leitura: {e}")
-            
-        await asyncio.sleep(0.5)
 
 async def main(): 
     robot_id = "BP_Robot"
@@ -48,9 +13,9 @@ async def main():
     await tce.play_in_editor()
     print("Iniciando Simulação...")
    
+    # Espera o robô ficar disponível
     await wait_for_robot(robot_id)
-
-    """
+    
     # --- TASK 1: SAY HELLO 
     print("\n[Tarefa 1] Configurando: PrintToScreen Message...")
     await cmd_print_to_screen(robot_id, "THIS MESSAGE WILL APPEAR ON THE SCREEN FOR 10 SECONDS!!!", duration=10.0)
@@ -59,32 +24,29 @@ async def main():
     sucesso = await wait_for_task_finished(robot_id, timeout=10)
     if not sucesso:
         print("A tarefa 1 falhou")
-    """
     
-    """
     # --- TASK 2: Moving to point 0, 1500, 0
     print("\n[Tarefa 2] Configurando: MoveToLocation, vai andar 5 metros no eixo Y com aceitação de 10 unidades...")
     await cmd_move_to_location(robot_id, 1500, 500, 50.0)
     sucesso = await wait_for_task_finished(robot_id, timeout=50)
     if not sucesso:
         print("A tarefa 2 falhou")
-    """
-    """
+
+
     # --- TASK 3: Moving to Actor
     print("\n[Tarefa 3] Configurando: MoveToActor, vai procurar o Actor com o Identificador RoomAEntrance e se mover pra la...")
     await cmd_move_to_actor(robot_id, "RoomA_Entrance")
     sucesso = await wait_for_task_finished(robot_id, timeout=50)
     if not sucesso:
         print("A tarefa 3 falhou")
-    """
 
+    # --- TASK 4: Moving along Path
     print("\n[Tarefa 4] Configurando: MoveAlongPath, vai procurar o Actor com o Identificador Path_A e se mover do ponto 0 até o final (-1)...")
     await cmd_move_along_path(robot_id, "Path_A", 0, -1)
     sucesso = await wait_for_task_finished(robot_id, timeout=50)
     if not sucesso:
         print("A tarefa 4 falhou")
 
-        
 
     print("\nFim do script.")
 
